@@ -10,6 +10,7 @@ import requests
 # First time using urllib! yay :)
 
 # URL taken from CTF in November 2015 - doesn't work anymore
+# open and read from url
 f = urllib.urlopen("http://10.3.0.4/2bc37f8c51534ebe5787a46a17108522/")
 # take all output and store as a string
 raw = f.read()
@@ -28,7 +29,7 @@ almost.sort(key=int)
 new = string.join(almost,",")
 print new
 
-# send sorted string back to URL within 10s
+# send sorted string back within 10s
 data = {'ascendingCommaSeparated':new}
 r = requests.post("http://10.3.0.4/2bc37f8c51534ebe5787a46a17108522/",
     data=data)
